@@ -1,0 +1,87 @@
+.input {
+  position: absolute;
+}
+
+.scene {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  width: 1440px;
+  max-width: 100%;
+  min-height: 100vh;
+  padding-bottom: 30px;
+}
+
+.card-galery-wrap {
+  display: block;
+  width: 300px;
+  max-width: 100%;
+  height: 400px;
+  margin: 0 auto;
+  margin-bottom: 15px;
+}
+
+.card-galery,
+.front,
+.back,
+.card-galery-photo {
+  width: 100%;
+  height: 100%;
+}
+
+.card-galery-face {
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.card-galery {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 1s, box-shadow 0.4s;
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.302),
+    0 1px 3px 1px rgba(60, 64, 67, 0.149);
+  border-radius: 10px;
+}
+
+.card-galery-photo {
+  object-fit: none;
+  border-radius: 10px;
+}
+
+.card-galery:hover {
+  box-shadow: 0 1px 3px 0 rgba(60, 64, 67, 0.302),
+    0 4px 8px 3px rgba(60, 64, 67, 0.149);
+}
+
+.back {
+  background-color: white;
+  transform: rotateY(180deg);
+  text-align: center;
+  color: darkgray;
+  border-radius: 10px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+}
+
+.back p {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.flipcard-galery {
+  opacity: 0;
+}
+
+input:checked + .card-galery {
+  transform: rotateY(180deg);
+}
+
+@media screen and (min-width: 960px) {
+  .scene {
+    display: flex;
+    justify-content: space-around;
+  }
+}

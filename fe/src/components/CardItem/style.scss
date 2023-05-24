@@ -1,0 +1,65 @@
+$color-gray: #9ca3af;
+$color-black: #1f2937;
+
+.card {
+  width: 100%;
+  height: initial;
+  background-color: hsl(180deg, 40%, calc(100% - var(--abs-offset) * 50%));
+  border-radius: 1rem;
+  color: $color-gray;
+  text-align: justify;
+  transition: all 0.3s ease-out;
+
+  img {
+    border-radius: 20px;
+    height: 320px;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  h2 {
+    margin-top: 10px;
+    padding: 0 2rem;
+    text-align: left;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: $color-black;
+  }
+  span {
+    padding: 0 2rem;
+  }
+  p {
+    padding: 0 2rem;
+  }
+  p,
+  h2 {
+    transition: all 0.3s ease-out;
+    opacity: var(--active);
+  }
+
+  button {
+    background-color: transparent;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: border-color 0.3s ease-in-out;
+    border: 2px solid transparent;
+    &:hover {
+      border-color: rgba(0, 255, 42, 0.3);
+      box-shadow: inset 0 0 10px rgba(0, 255, 42, 0.3);
+      outline: none;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .card {
+    img {
+      border-radius: 20px;
+      height: 220px;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+}

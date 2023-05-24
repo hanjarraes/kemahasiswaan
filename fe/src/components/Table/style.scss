@@ -1,0 +1,102 @@
+.table-custom {
+  font-family: Arial, Helvetica, sans-serif;
+  max-width: 100%;
+  border-radius: 10px;
+  margin-bottom: 0;
+
+  thead {
+    background-color: #00bf6fb7;
+    color: #fff;
+    tr {
+      th {
+        &:first-child {
+          border-top-left-radius: 10px;
+        }
+        &:last-child {
+          border-top-right-radius: 10px;
+        }
+      }
+    }
+  }
+  tbody {
+    tr {
+      td {
+        cursor: pointer;
+        i {
+          font-size: 20px;
+          color: #00bf6fb7;
+          font-weight: bolder;
+          &:hover {
+            color: #27634ab7;
+          }
+        }
+      }
+    }
+  }
+}
+
+.paging-box {
+  height: 50px;
+  padding-bottom: 5px !important;
+  gap: 5px;
+  li {
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+      rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+      rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  }
+  .paging-arrow {
+    display: flex;
+    width: max-content;
+    align-items: center;
+    background-color: #fff;
+    font-size: 120%;
+    cursor: pointer;
+    z-index: 2;
+    padding: 0 10px;
+    color: #00bf6fb7;
+    &:hover {
+      color: #fff;
+      background-color: #00bf6fb7;
+    }
+  }
+  .paging-number-total {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    background-color: #fff;
+    color: #00bf6fb7;
+    z-index: 2;
+    font-size: 12px;
+    padding-inline: 10px;
+    cursor: pointer;
+    gap: 0.5rem;
+    &::marker {
+      color: transparent;
+    }
+    input {
+      width: 23px;
+      border: 1px solid #afaaaa;
+      border-radius: 5px;
+      outline: none;
+      &:focus {
+        border: 1px solid #00bf6fb7;
+      }
+    }
+  }
+}
+
+.btn-custom {
+  background-color: #00bf6fb7;
+  color: #fff;
+  border: 1px solid;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  &:hover {
+    background-color: #fff;
+    color: #00bf6fb7;
+    border: 1px solid #00bf6fb7;
+  }
+}

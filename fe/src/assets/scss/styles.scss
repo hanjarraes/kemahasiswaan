@@ -1,0 +1,288 @@
+/*!
+ * Bootstrap v5.0.2 (https://getbootstrap.com/)
+ * Copyright 2011-2021 The Bootstrap Authors
+ * Copyright 2011-2021 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
+ */
+
+// scss-docs-start import-stack
+// Configuration
+@import "functions";
+@import "variables";
+@import "mixins";
+@import "utilities";
+
+// Layout & components
+@import "root";
+@import "reboot";
+@import "type";
+@import "images";
+@import "containers";
+@import "grid";
+@import "tables";
+@import "forms";
+@import "buttons";
+@import "transitions";
+@import "dropdown";
+@import "button-group";
+@import "nav";
+@import "navbar";
+@import "card";
+@import "accordion";
+@import "breadcrumb";
+@import "pagination";
+@import "badge";
+@import "alert";
+@import "progress";
+@import "list-group";
+@import "close";
+@import "toasts";
+@import "modal";
+@import "tooltip";
+@import "popover";
+@import "carousel";
+@import "spinners";
+@import "offcanvas";
+
+// Helpers
+@import "helpers";
+
+// Utilities
+@import "utilities/api";
+// scss-docs-end import-stack
+
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: #fbfbfb;
+}
+
+.agenda-uis {
+  background-image: linear-gradient(#f1f6ff, #d4ffed);
+  padding: 15px 0;
+  height: 630px;
+  .title-agenda {
+    font-size: 36px;
+    font-weight: bolder;
+  }
+}
+
+.visi-misi {
+  background-color: #00bf71;
+  color: #fff;
+  padding: 20px 0;
+  span {
+    font-size: 32px;
+  }
+  img {
+    width: 100%;
+    border-radius: 20px;
+  }
+}
+
+.pendaftaran {
+  background-image: linear-gradient(#d4ffed, #f1f6ff);
+  padding: 50px 0;
+  .video-youtube {
+    div {
+      max-width: 100% !important;
+      height: 350px !important;
+      border-radius: 20px !important ;
+    }
+  }
+
+  span {
+    font-size: 32px;
+  }
+  p {
+    text-align: justify;
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+    background: #00bf71;
+    color: #fff;
+  }
+}
+
+.input-search {
+  font-size: 14px;
+  i {
+    margin-right: 10px;
+  }
+  input {
+    width: inherit;
+    border: none;
+    outline: none;
+  }
+}
+
+.berita-detail {
+  background-image: linear-gradient(#f1f6ff, #fff);
+  padding: 20px 0;
+  img {
+    height: 500px;
+    width: 100%;
+    object-position: center;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+
+  span {
+    a {
+      text-decoration: none;
+      color: #6e6c6c;
+      i {
+        font-size: 18px;
+      }
+      &:hover {
+        color: #00bf71;
+      }
+    }
+  }
+  .berita-tilte {
+    font-size: 46px;
+  }
+  .berita-desc2 {
+    font-size: 14px;
+    text-align: justify;
+    font-family: monospace;
+    color: #6e6c6c;
+    padding: 5px 0;
+  }
+  .berita-desc {
+    font-size: 14px;
+    text-align: justify;
+    font-family: monospace;
+  }
+
+  .kembali-berita > a {
+    font-size: 16px;
+    padding: 0 10px;
+    font-weight: bold;
+    position: relative;
+    color: #059977;
+    text-decoration: none;
+
+    &:hover {
+      color: #059977;
+      font-size: 18px;
+      transition: font-size 0.2s;
+      &::before {
+        visibility: visible;
+        transform: scaleX(1);
+      }
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: #059977;
+      visibility: hidden;
+      transform: scaleX(0);
+      transition: all 0.3s ease-in-out 0s;
+    }
+  }
+}
+
+.title-table {
+  display: flex;
+  align-items: center;
+  color: #00bf71;
+  margin-top: 20px;
+  i {
+    font-size: 46px;
+    margin-right: 5px;
+  }
+  h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0;
+  }
+}
+
+.closeLabel {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background: transparent;
+  top: -88px;
+  bottom: 0;
+  left: -4px;
+  right: 0;
+}
+
+.link-another {
+  a {
+    display: flex;
+    align-items: center;
+    i {
+      margin-right: 8px;
+      font-size: 24px;
+    }
+  }
+}
+
+.link-another > a {
+  font-size: 14px;
+  padding: 0 10px;
+  font-weight: bold;
+  position: relative;
+  color: #059977;
+  text-decoration: none;
+
+  &:hover {
+    color: #059977;
+    font-size: 16px;
+    transition: font-size 0.2s;
+    &::before {
+      visibility: visible;
+      transform: scaleX(1);
+    }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #059977;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out 0s;
+  }
+}
+
+// responsif
+@media (max-width: 1440px) {
+}
+
+@media (max-width: 850px) {
+  .agenda-uis {
+    height: 1200px;
+    .content-agenda {
+      margin-bottom: 100px;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .agenda-uis {
+    height: 1050px;
+    .content-agenda:first-child {
+      margin-bottom: 150px;
+    }
+  }
+  .carousel {
+    width: 16rem !important;
+    height: 16rem !important;
+    .nav {
+      font-size: 3rem;
+    }
+  }
+}
