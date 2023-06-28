@@ -258,6 +258,44 @@ body {
   }
 }
 
+.card-dashboard {
+  margin-top: 20px;
+  width: 100%;
+  height: 120px;
+  background: linear-gradient(to right, #b2b2fb, #1ce07c);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  justify-content: space-evenly;
+  font-size: 40px;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  span {
+    font-weight: bolder;
+    font-size: 24px;
+  }
+  &:hover {
+    color: #1ce07c;
+    border: 1px solid #1ce07c;
+    background: #fff;
+    font-size: 48px;
+    transition: font-size 0.2s;
+
+    span {
+      font-weight: bolder;
+      font-size: 26px;
+    }
+  }
+}
+
+.chart-dashboard {
+  background: #ebecec;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  margin-top: 20px;
+}
+
 // responsif
 @media (max-width: 1440px) {
 }

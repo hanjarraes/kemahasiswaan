@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import * as XLSX from "xlsx";
-import './style.scss';
+import "./style.scss";
 
 const Table = ({ columns, data }) => {
   const [sortColumn, setSortColumn] = useState(null);
@@ -25,22 +25,22 @@ const Table = ({ columns, data }) => {
 
   const sortedData = sortColumn
     ? [...data].sort((a, b) => {
-      if (a[sortColumn] < b[sortColumn]) {
-        return sortDirection === "asc" ? -1 : 1;
-      }
-      if (a[sortColumn] > b[sortColumn]) {
-        return sortDirection === "asc" ? 1 : -1;
-      }
-      return 0;
-    })
+        if (a[sortColumn] < b[sortColumn]) {
+          return sortDirection === "asc" ? -1 : 1;
+        }
+        if (a[sortColumn] > b[sortColumn]) {
+          return sortDirection === "asc" ? 1 : -1;
+        }
+        return 0;
+      })
     : data;
 
   const filteredData = searchValue
     ? sortedData.filter((item) =>
-      Object.values(item).some((value) =>
-        String(value).toLowerCase().includes(searchValue.toLowerCase())
+        Object.values(item).some((value) =>
+          String(value).toLowerCase().includes(searchValue.toLowerCase())
+        )
       )
-    )
     : sortedData;
 
   const indexOfLastItem = currentPage * itemsPerPage;
@@ -69,10 +69,10 @@ const Table = ({ columns, data }) => {
     <>
       <div className="row mt-4 mb-2 d-flex align-items-center">
         <div className="col-12 col-md-6">
-          <div className='form-control input-search d-flex'>
+          <div className="form-control input-search d-flex">
             <i className="ri-search-line" />
             <input
-              placeholder='Search...'
+              placeholder="Search..."
               value={searchValue}
               onChange={handleSearch}
             />
@@ -84,7 +84,10 @@ const Table = ({ columns, data }) => {
           </button>
         </div>
       </div>
-      <div className="overflow-auto " style={{ maxWidth: "100vw", minHeight: "55vh" }}>
+      <div
+        className="overflow-auto "
+        style={{ maxWidth: "100vw", minHeight: "55vh" }}
+      >
         <table className="table table-striped table-custom">
           <thead>
             <tr>
@@ -94,9 +97,19 @@ const Table = ({ columns, data }) => {
                   onClick={() => handleSort(column.accessor)}
                   style={{
                     cursor: "pointer",
-                    borderTop: sortColumn === column.accessor ? (sortDirection === "asc" ? "2px solid #497659" : "none") : "",
-                    borderBottom: sortColumn === column.accessor ? (sortDirection === "asc" ? "none" : "2px solid #497659") : "",
-                    color: sortColumn === column.accessor ? '#497659' : ''
+                    borderTop:
+                      sortColumn === column.accessor
+                        ? sortDirection === "asc"
+                          ? "2px solid #497659"
+                          : "none"
+                        : "",
+                    borderBottom:
+                      sortColumn === column.accessor
+                        ? sortDirection === "asc"
+                          ? "none"
+                          : "2px solid #497659"
+                        : "",
+                    color: sortColumn === column.accessor ? "#497659" : "",
                   }}
                 >
                   {column.Header}
@@ -108,13 +121,19 @@ const Table = ({ columns, data }) => {
             {currentItems.map((item, index) => (
               <tr key={index}>
                 {columns?.map((column) => {
-                  console.log(column.accessor)
-                  if (column.accessor === 'download_link') {
-                    return <td key={`${column.accessor}-${index}`}><i className="ri-download-2-line" /></td>
+                  if (column.accessor === "download_link") {
+                    return (
+                      <td key={`${column.accessor}-${index}`}>
+                        <i className="ri-download-2-line" />
+                      </td>
+                    );
                   }
-                  return <td key={`${column.accessor}-${index}`}>{item[column.accessor]}</td>
-                }
-                )}
+                  return (
+                    <td key={`${column.accessor}-${index}`}>
+                      {item[column.accessor]}
+                    </td>
+                  );
+                })}
               </tr>
             ))}
           </tbody>
@@ -136,7 +155,7 @@ const Table = ({ columns, data }) => {
               onClick={() => {
                 if (currentPage === 1) {
                 } else {
-                  paginate(currentPage - 1)
+                  paginate(currentPage - 1);
                 }
               }}
             >
@@ -149,7 +168,11 @@ const Table = ({ columns, data }) => {
                 className="paging-number-active"
                 maxLength={4}
                 value={currentPage}
-                onChange={(e) => setCurrentPage(Number(e.target.value))}
+                onChange={(e) => {
+                  if (Number(e.target.value)) {
+                    setCurrentPage(Number(e.target.value));
+                  }
+                }}
               />
               <div className="paging-number-of">of</div>
               <div className="paging-total-result">{totalPages}</div>
@@ -159,7 +182,7 @@ const Table = ({ columns, data }) => {
               onClick={() => {
                 if (currentPage === totalPages) {
                 } else {
-                  paginate(currentPage + 1)
+                  paginate(currentPage + 1);
                 }
               }}
             >
@@ -170,7 +193,7 @@ const Table = ({ columns, data }) => {
               onClick={() => {
                 if (currentPage === totalPages) {
                 } else {
-                  paginate(currentPage + 1)
+                  paginate(currentPage + 1);
                 }
               }}
             >
