@@ -42,7 +42,7 @@ const Dashboard = () => {
         </div>
       </div>
       <div className="row px-2">
-        <div className="col-8">
+        <div className="col-12 col-md-8">
           <ChartCustom
             elementType="bar"
             setState={setState}
@@ -50,7 +50,7 @@ const Dashboard = () => {
             activeSeriesIndex={activeSeriesIndex}
           />
         </div>
-        <div className="col-4">
+        <div className="col-12 col-md-4">
           <div className="according-dashboard">
             <Accordion>
               <AccordionSummary

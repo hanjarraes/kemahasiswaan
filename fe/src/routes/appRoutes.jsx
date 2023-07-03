@@ -4,7 +4,17 @@ import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
 import CollectionsBookmarkIcon from '@mui/icons-material/CollectionsBookmark';
 import AssignmentIcon from '@mui/icons-material/Assignment';
 import EventIcon from '@mui/icons-material/Event';
+import EventAvailableIcon from '@mui/icons-material/EventAvailable';
+import NewspaperIcon from '@mui/icons-material/Newspaper';
 import Dashboard from "../pages/Dashboard"
+import { GaleryData } from "../pages/Galery";
+import { BeritaData } from "../pages/Berita";
+import LayoutEvent from "../container/LayoutEvent";
+import { AgendaData } from "../pages/Agenda";
+import LayoutDocument from "../container/LayoutDocument";
+import { InfoBeasiswaData } from "../pages/InfoBeasiswa";
+import { PenerimaBeasiswaData } from "../pages/PenerimaBeasiswa";
+import { PrestasiData } from "../pages/Prestasi";
 
 const appRoutes = [
   {
@@ -18,7 +28,7 @@ const appRoutes = [
   },
   {
     path: "/event",
-    element: <Dashboard />,
+    element: <LayoutEvent />,
     state: "event",
     sidebarProps: {
       displayText: "Event",
@@ -27,25 +37,27 @@ const appRoutes = [
     child: [
       {
         path: "/event/agenda",
-        element: <Dashboard />,
-        state: "component.agenda",
+        element: <AgendaData />,
+        state: "event.agenda",
         sidebarProps: {
-          displayText: "Agenda"
+          displayText: "Agenda",
+          icon: <EventAvailableIcon />
         },
       },
       {
         path: "/event/berita",
-        element: <Dashboard />,
-        state: "component.berita",
+        element: <BeritaData />,
+        state: "event.berita",
         sidebarProps: {
-          displayText: "Berita"
+          displayText: "Berita",
+          icon : <NewspaperIcon />
         }
       }
     ]
   },
   {
     path: "/document",
-    element: <Dashboard />,
+    element: <LayoutDocument />,
     state: "document",
     sidebarProps: {
       displayText: "Document",
@@ -54,7 +66,7 @@ const appRoutes = [
     child: [
       {
         path: "/document/data-prestasi",
-        element: <Dashboard />,
+        element: <PrestasiData />,
         state: "document.data-prestasi",
         sidebarProps: {
           displayText: "Data Prestasi"
@@ -62,7 +74,7 @@ const appRoutes = [
       },
       {
         path: "/document/info-mahasiswa",
-        element: <Dashboard />,
+        element: <InfoBeasiswaData />,
         state: "document.info-mahasiswa",
         sidebarProps: {
           displayText: "Info Mahasiswa"
@@ -70,7 +82,7 @@ const appRoutes = [
       },
       {
         path: "/document/penerimaan-beasiswa",
-        element: <Dashboard />,
+        element: <PenerimaBeasiswaData />,
         state: "document.penerimaan-beasiswa",
         sidebarProps: {
           displayText: "Penerimaan Beasiswa"
@@ -79,11 +91,11 @@ const appRoutes = [
     ]
   },
   {
-    path: "/galery",
-    element: <Dashboard />,
-    state: "galery",
+    path: "/data-galery",
+    element: <GaleryData />,
+    state: "data-galery",
     sidebarProps: {
-      displayText: "Galery",
+      displayText: "Data Galery",
       icon: <CollectionsBookmarkIcon />
     }
   },
